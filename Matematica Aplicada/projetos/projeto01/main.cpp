@@ -3,7 +3,7 @@
 
 void main(){
 
-    int i,menu=0, verificador,A[5],B[5], uniao[10], interA[5], interB[5], difSimAB[10];
+    int i,menu=0, verificador,A[5],B[5], uniao[10], interA_B[5], interB_A[5], difSimAB[10];
     //do-while para o vetor A
     do
     {

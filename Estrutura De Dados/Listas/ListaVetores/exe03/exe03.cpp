@@ -16,7 +16,6 @@ void main(){
             {
                 maior_valor == nums[i];
             }
-            
         }
         
     }
