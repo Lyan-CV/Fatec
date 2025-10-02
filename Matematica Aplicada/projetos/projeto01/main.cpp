@@ -3,7 +3,7 @@
 
 void main(){
 
-    int i,menu=0, verificador,A[5],B[5], uniao[10], interA_B[5], interB_A[5], difSimAB[10];
+    int i,j,menu=0, verificador,A[5],B[5], uniao[10], inter[5], A_menos_B[5], B_menos_A[5], difSimAB[10], tamanho_dif=0;
     //do-while para o vetor A
     do
     {
@@ -79,11 +79,65 @@ void main(){
 
     //For para a união
 
-    for (i = 0; i <10; i++)
+    for (i = 0; i <5; i++)
     {
         uniao[i] = A[i];
         uniao[i+5] = B[i];
     }
+
+    //for para intersecção A=B
+    for (i = 0; i < 5; i++)
+    {
+        for (j = 0; j <5; i++)
+        {
+            if (A[i] == B[j])
+            {
+                inter[i] = A[i];
+            }
+            
+        }
+        
+    }
+
+    //For para A-B
+    for (i = 0; i < 5; i++)
+    {
+        for (j = 0; j <5; i++)
+        {
+            if (A[i] != B[j])
+            {
+                A_menos_B[i] = A[i];
+            }
+            
+        }
+        
+    }
+    //for para B-A
+    for (i = 0; i < 5; i++)
+    {
+        for (j = 0; j <5; i++)
+        {
+            if (B[i] != A[j])
+            {
+                B_menos_A[i] = B[i];
+            }
+            
+        }
+        
+    }
+
+    for (i = 0; i <5; i++)
+    {
+        if (difSimAB[i] != A[i] && difSimAB[i] != B[i])
+        {
+            difSimAB[i] = A[i];
+            difSimAB[i+5] = B[i];
+            tamanho_dif++;
+        }
+    }
+    
+    
+    
 
 //prints dos vetores
     printf("\n=- VETOR A -=\n");
@@ -108,7 +162,26 @@ void main(){
         
         printf("\nValor: %d",uniao[i]);    
     }
- 
+    printf("\n=- DIferenca Simetrica -=\n");
+    for (i = 0; i < tamanho_dif; i++)
+    {
+        printf("\nValor: %d",difSimAB[i]);
+    }
+
+    printf("\n=- A Menos B -=\n");
+    for (i = 0; i < 5; i++)
+    {
+        printf("\nValor: %d",A_menos_B[i]);
+    }
+    printf("\n=- B Menos A -=\n");
+    for (i = 0; i < 5; i++)
+    {
+        printf("\nValor: %d",B_menos_A[i]);
+    }
+    printf("\n=- Intersccao -=\n");
+    for (i = 0; i < 5; i++)
+    {
+        printf("\nValor: %d",inter[i]);
+    }
     
-    printf("");
 }

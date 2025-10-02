@@ -22,7 +22,7 @@ int main(){
 
         media = (n1+n2+n3+n4)/4;
 
-        printf("\nNome: %s\nMedia: %f", nome, media);
+        printf("\nNome: %s\nMedia: %.0f", nome, media);
 
         while (resp != 'n' || resp != 'N' || resp != 'S' || resp != 's')
         {
